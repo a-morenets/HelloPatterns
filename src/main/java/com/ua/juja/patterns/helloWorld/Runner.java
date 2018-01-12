@@ -1,13 +1,13 @@
 package com.ua.juja.patterns.helloWorld;
 
 public class Runner {
-    private Strategy strategy;
+    private Target target;
 
-    public Runner(Strategy strategy) {
-        this.strategy = strategy;
+    public Runner(Target target) {
+        this.target = target;
     }
 
     public void run() {
-        strategy.print("Hello World!");
+        target.addMessages("Hello World!");
     }
 }
