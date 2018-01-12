@@ -14,10 +14,10 @@ public class RunnerTest {
     public void test() {
         // given
         InMemoryStrategy strategy = new InMemoryStrategy();
-        Runner runner = new Runner(new Adapter(strategy));
+        Component component = new Runner(new Adapter(strategy));
 
         // when
-        runner.run();
+        component.run("Hello World!");
 
         // then
         assertEquals("[Hello World!]", strategy.getMessages().toString());
@@ -28,10 +28,10 @@ public class RunnerTest {
     @Test
     public void test2() {
         // given
-        Runner runner = new Runner(messages -> RunnerTest.this.messages.addAll(Arrays.asList(messages)));
+        Component component = new Runner(messages -> RunnerTest.this.messages.addAll(Arrays.asList(messages)));
 
         // when
-        runner.run();
+        component.run("Hello World!");
 
         // then
         assertEquals("[Hello World!]", messages.toString());

@@ -1,13 +1,14 @@
 package com.ua.juja.patterns.helloWorld;
 
-public class Runner {
+public class Runner implements Component {
     private Target target;
 
     public Runner(Target target) {
         this.target = target;
     }
 
-    public void run() {
-        target.addMessages("Hello World!");
+    @Override
+    public void run(String message) {
+        target.addMessages(message);
     }
 }
