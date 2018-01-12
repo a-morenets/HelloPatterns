@@ -1,7 +1,17 @@
 package com.ua.juja.patterns.helloWorld;
 
 public class Runner {
-    public static void run() {
-        System.out.println("Hello World!");
+    private Strategy strategy;
+
+    public Runner(Strategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public void run() {
+        strategy.print("Hello World!");
+    }
+
+    private void print(String message) {
+        System.out.println(message);
     }
 }
