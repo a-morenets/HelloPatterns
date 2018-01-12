@@ -10,8 +10,4 @@ public class Runner {
     public void run() {
         strategy.print("Hello World!");
     }
-
-    private void print(String message) {
-        System.out.println(message);
-    }
 }
