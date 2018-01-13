@@ -2,7 +2,7 @@ package com.ua.juja.patterns.helloWorld;
 
 public class Main {
     public static void main(String[] args) {
-        String message = "Hello World!";
+        String message = "Hello World";
 
         Runner runner = RunnerFactory.create();
 
@@ -10,6 +10,11 @@ public class Main {
 
         InMemoryStrategy inMemory = new InMemoryStrategy();
         runner.addTarget(new Adapter(inMemory));
+
+        // long time ago
+
+        Handler handler = new HelloWorldHandler();
+        runner.addHandler(handler);
 
         // long time ago
 
