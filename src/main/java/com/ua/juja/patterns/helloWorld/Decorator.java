@@ -3,7 +3,7 @@ package com.ua.juja.patterns.helloWorld;
 public abstract class Decorator implements Component {
     private Component component;
 
-    protected Decorator(Component component) {
+    Decorator(Component component) {
         this.component = component;
     }
 

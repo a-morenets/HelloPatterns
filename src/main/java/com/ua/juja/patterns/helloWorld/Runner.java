@@ -1,14 +1,14 @@
 package com.ua.juja.patterns.helloWorld;
 
 public class Runner implements Component {
-    private Target target;
+    private Observable observable = new ObservableImpl();
 
-    public Runner(Target target) {
-        this.target = target;
+    public void addTarget(Target target) {
+        observable.add(new TargetObserverAdapter(target));
     }
 
     @Override
     public void run(String message) {
-        target.addMessages(message);
+        observable.notifyAll(message);
     }
 }
