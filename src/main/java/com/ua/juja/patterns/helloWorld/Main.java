@@ -13,8 +13,8 @@ public class Main {
 
         // long time ago
 
-        runner.addHandler(new HelloWorldHandler("!"));
-        runner.addHandler(new HelloWorldHandler("☺"));
+        runner.addHandler(new HelloWorldHandler(new AddEmotionsCommand("!")));
+        runner.addHandler(new HelloWorldHandler(new AddEmotionsCommand("☺")));
 
         // long time ago
 
