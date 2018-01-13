@@ -2,7 +2,7 @@ package com.ua.juja.patterns.helloWorld;
 
 public class ToUpperCaseDecorator extends Decorator {
 
-    ToUpperCaseDecorator(Component component) {
+    public ToUpperCaseDecorator(Component component) {
         super(component);
     }
 
