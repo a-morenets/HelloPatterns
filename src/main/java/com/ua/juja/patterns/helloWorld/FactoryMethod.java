@@ -1,7 +1,5 @@
 package com.ua.juja.patterns.helloWorld;
 
-public interface AbstractFactory {
+public interface FactoryMethod {
     EmotionProduct getEmotion();
-
-    EmotionProduct getSymbol();
 }

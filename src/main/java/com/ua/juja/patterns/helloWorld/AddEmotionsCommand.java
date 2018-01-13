@@ -1,9 +1,9 @@
 package com.ua.juja.patterns.helloWorld;
 
 public class AddEmotionsCommand implements Command {
-    private AbstractFactory factory;
+    private FactoryMethod factory;
 
-    public AddEmotionsCommand(AbstractFactory factory) {
+    public AddEmotionsCommand(FactoryMethod factory) {
         this.factory = factory;
     }
 

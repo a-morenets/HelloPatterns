@@ -3,11 +3,11 @@ package com.ua.juja.patterns.helloWorld;
 public class Main {
     public static void main(String[] args) {
         String message = "Hello World";
-        AbstractFactory factory = new HappyFactory();
+        FactoryMethod factory = new SadFactoryMethod();
         process(message, factory);
     }
 
-    private static void process(String message, AbstractFactory factory) {
+    private static void process(String message, FactoryMethod factory) {
         // long time ago
 
         Runner runner = RunnerFactory.create();
@@ -19,14 +19,13 @@ public class Main {
 
         // long time ago
 
-        runner.addHandler(new HelloWorldHandler(new AddSymbolCommand(factory)));
         runner.addHandler(new HelloWorldHandler(new AddEmotionsCommand(factory)));
 
         // long time ago
 
         Component component = runner;
         component = new ToUpperCaseDecorator(component);
-        component = new ReplaceSpaceTo(component, factory.getSymbol().get());
+        component = new ReplaceSpaceTo(component, factory.getEmotion().get());
         component.run(message);
 
 //        List<String> messages = inMemory.getMessages();
