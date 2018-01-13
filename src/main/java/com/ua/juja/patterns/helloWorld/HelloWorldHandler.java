@@ -9,11 +9,10 @@ public class HelloWorldHandler extends Handler {
     }
 
     @Override
-    public void handle(Request request) {
+    protected void handleRequest(Request request) {
         String s = request.getMessage().toLowerCase();
         if (s.contains("hello") && s.contains("world")) {
             request.setMessage(request.getMessage() + symbol);
         }
-        super.handle(request);
     }
 }
