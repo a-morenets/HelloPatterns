@@ -17,11 +17,13 @@ public class RunnerTest {
         Runner runner = RunnerFactory.create();
         runner.addTarget(new Adapter(strategy));
 
+        runner.addHandler(new HelloWorldHandler("☺"));
+
         // when
         runner.run("Hello World!");
 
         // then
-        assertEquals("[Hello World!]", strategy.getMessages().toString());
+        assertEquals("[Hello World!☺]", strategy.getMessages().toString());
     }
 
     private List<String> messages = new LinkedList<>();
@@ -30,13 +32,7 @@ public class RunnerTest {
     public void test2() {
         // given
         Runner runner = RunnerFactory.create();
-        runner.addTarget(new Target() {
-
-            @Override
-            public void addMessages(String... messages) {
-                RunnerTest.this.messages.addAll(Arrays.asList(messages));
-            }
-        });
+        runner.addTarget(messages -> RunnerTest.this.messages.addAll(Arrays.asList(messages)));
 
         // when
         runner.run("Hello World!");

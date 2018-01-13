@@ -13,8 +13,8 @@ public class Main {
 
         // long time ago
 
-        Handler handler = new HelloWorldHandler();
-        runner.addHandler(handler);
+        runner.addHandler(new HelloWorldHandler("!"));
+        runner.addHandler(new HelloWorldHandler("☺"));
 
         // long time ago
 

@@ -1,6 +1,8 @@
 package com.ua.juja.patterns.helloWorld;
 
 public abstract class Handler {
+    public static final Handler NULL = new NullHandler();
+
     private Handler next;
 
     public void addNext(Handler next) {
