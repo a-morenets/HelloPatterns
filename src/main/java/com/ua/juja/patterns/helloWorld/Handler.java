@@ -9,19 +9,20 @@ public abstract class Handler {
         this.next = next;
     }
 
-    public void handle(Request request) {
-        handleRequest(request);
+    public Request handle(Request request) {
+        Request changed = handleRequest(request);
 
         if (next != null) {
-            next.handle(request);
+            changed = next.handle(changed);
         }
 
-        doAfterAll(request);
+        doAfterAll(changed);
+        return changed;
     }
 
     private void doAfterAll(Request request) {
         // implement in subclass
     }
 
-    protected abstract void handleRequest(Request request);
+    protected abstract Request handleRequest(Request request);
 }
